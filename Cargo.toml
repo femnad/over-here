@@ -1,0 +1,7 @@
+[package]
+name = "over-here"
+version = "0.1.0"
+authors = ["femnad <zehemer@fastmail.fm>"]
+
+[dependencies]
+notify-rust = "~3.1"
