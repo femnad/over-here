@@ -18,4 +18,11 @@ Run `over-here` and send messages via `notify-send`
 What's the Catch?
 =================
 
-Requires [dzenotify](https://github.com/femnad/dzenotify) to be on the `PATH`.
+A notifier processing stdin arguments must be in your `PATH` and specied in `$HOME/.config/over-here/over-here.conf`
+
+For example, to use [dzenotify](https://github.com/femnad/dzenotify) (shameless plug):
+
+    [Notifier]
+    executable=dzenotify
+
+Two simple notifiers to be used with Ratpoison and StumpWM are in the `contrib` folder.
