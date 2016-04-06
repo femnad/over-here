@@ -11,4 +11,5 @@ fi
 summary="$1"
 body="$2"
 
-echo "echo $summary: $body" | stumpish > /dev/null
+stumpish eval "(echo \"^2*$summary
+^7*$body\")" > /dev/null
