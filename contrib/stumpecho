@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -u
 NAME="stumpecho"
 
 if [ "$#" -ne "2" ]
@@ -10,6 +10,15 @@ fi
 
 summary="$1"
 body="$2"
+echo $body | grep -E '<[a-z ]*/?>' > /dev/null
+if [ "$?" -eq "0" ]
+then
+	which lynx > /dev/null
+	if [ "$?" -eq "0" ]
+	then
+		body=$(echo "$body" | lynx -stdin -dump)
+	fi
+fi
 
 stumpish eval "(echo \"^2*$summary
 ^7*$body\")" > /dev/null
