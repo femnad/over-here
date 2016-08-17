@@ -11,4 +11,5 @@ fi
 summary="$1"
 body="$2"
 
-ratpoison -c "echo $summary: $body"
+ratpoison -c "echo $summary
+$body"
