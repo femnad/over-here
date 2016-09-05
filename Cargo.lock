@@ -2,8 +2,8 @@
 name = "over-here"
 version = "0.1.0"
 dependencies = [
- "notify-rust 3.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
- "rust-ini 0.9.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "notify-rust 3.2.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rust-ini 0.9.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -27,7 +27,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "notify-rust"
-version = "3.1.1"
+version = "3.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "dbus 0.3.2 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -40,7 +40,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "rust-ini"
-version = "0.9.4"
+version = "0.9.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "log 0.3.6 (registry+https://github.com/rust-lang/crates.io-index)",
