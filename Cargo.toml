@@ -4,5 +4,5 @@ version = "0.1.0"
 authors = ["femnad <zehemer@fastmail.fm>"]
 
 [dependencies]
-notify-rust = "3.2.0"
-rust-ini = "0.9.8"
+notify-rust = "3.2.1"
+rust-ini = "0.9.9"
