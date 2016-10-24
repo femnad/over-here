@@ -6,3 +6,4 @@ authors = ["femnad <zehemer@fastmail.fm>"]
 [dependencies]
 notify-rust = "3.2.1"
 rust-ini = "0.9.9"
+nix = "0.7.0"

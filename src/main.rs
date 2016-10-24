@@ -1,11 +1,13 @@
 extern crate notify_rust;
 extern crate ini;
+extern crate nix;
 
 use ini::Ini;
 use notify_rust::Notification;
 use notify_rust::server::NotificationServer;
 use std::process::Command;
 use std::env;
+use nix::unistd::daemon;
 
 fn run_command(notifier:&String, notification:&Notification) {
     let ref summary = notification.summary;
@@ -16,6 +18,9 @@ fn run_command(notifier:&String, notification:&Notification) {
 }
 
 fn main() {
+    let daemonized = daemon(false, true);
+    assert!(daemonized.is_ok());
+
     let mut server = NotificationServer::new();
     let mut config_file_path = env::home_dir().unwrap();
     config_file_path.push(".config/over-here/over-here.conf");
