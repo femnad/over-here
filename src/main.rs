@@ -18,8 +18,12 @@ fn run_command(notifier:&String, notification:&Notification) {
 }
 
 fn main() {
-    let daemonized = daemon(false, true);
-    assert!(daemonized.is_ok());
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() > 1 {
+        let daemonized = daemon(false, true);
+        assert!(daemonized.is_ok());
+    }
 
     let mut server = NotificationServer::new();
     let mut config_file_path = env::home_dir().unwrap();
