@@ -1,6 +1,7 @@
 extern crate notify_rust;
 extern crate ini;
 extern crate nix;
+extern crate dirs;
 
 use ini::Ini;
 use notify_rust::Notification;
@@ -26,11 +27,11 @@ fn main() {
     }
 
     let mut server = NotificationServer::new();
-    let mut config_file_path = env::home_dir().unwrap();
-    config_file_path.push(".config/over-here/over-here.conf");
 
-    let conf = Ini::load_from_file(
-        config_file_path.to_str().unwrap()).expect(
+    let home_dir = dirs::home_dir().unwrap();
+    let config_file_path = format!("{}/.config/over-here/over-here.conf", home_dir.to_str().unwrap());
+
+    let conf = Ini::load_from_file(config_file_path).expect(
         "No config file found");
 
     let section = conf.section(Some("Notifier".to_owned())).expect(
