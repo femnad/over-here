@@ -18,7 +18,16 @@ fn run_command(notifier:&String, notification:&Notification) {
     });
 }
 
+fn ensure_display() {
+    match env::var("DISPLAY") {
+        Ok(_) => (),
+        Err(_) => panic!("No display available")
+    }
+}
+
 fn main() {
+    ensure_display();
+
     let args: Vec<String> = env::args().collect();
 
     if args.len() > 1 {
