@@ -1,0 +1,11 @@
+[Unit]
+Description=Simpleton notification handler
+After=display-manager.service
+
+[Service]
+ExecStart=/home/%u/.cargo/bin/over-here
+Restart=Always
+RestartSec=5
+
+[Install]
+WantedBy=graphical.target
