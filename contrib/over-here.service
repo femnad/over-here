@@ -5,7 +5,8 @@ After=display-manager.service
 [Service]
 ExecStart=/home/%u/.cargo/bin/over-here
 Environment=DISPLAY=:0
-Restart=Always
+Environment=PATH=/bin:/usr/bin:/usr/local/bin:/home/%u/bin
+Restart=always
 RestartSec=5
 
 [Install]
