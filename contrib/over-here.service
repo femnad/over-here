@@ -4,6 +4,7 @@ After=display-manager.service
 
 [Service]
 ExecStart=/home/%u/.cargo/bin/over-here
+Environment=DISPLAY=:0
 Restart=Always
 RestartSec=5
 
